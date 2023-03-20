@@ -1,0 +1,22 @@
+#!/bin/bash
+
+prefix="${1:-HamzaSalam}"           ## beginning of filename
+number=1                            ## start number to look for
+
+newcount="${2:-25}"                 ## count of new files to create
+
+printf -v num "%03d" "$number"      ## create 3-digit start number
+fname="$prefix$num"                 ## form first filename
+
+while [ -e "$fname" ]; do           ## while filename exists
+        number=$((number + 1))              ## increment number
+  printf -v num "%03d" "$number"    ## form 3-digit number
+  fname="$prefix$num"               ## form filename
+done
+
+while ((newcount--)); do              ## loop newcount times
+  touch "$fname"                    ## create filename
+  number=$((number + 1))            ## increment number
+  printf -v num "%03d" "$number"    ## form 3-digit number
+  fname="$prefix$num"               ## form filename
+done
