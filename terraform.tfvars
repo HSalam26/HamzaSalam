@@ -1,5 +1,0 @@
-bucket_prefix = "devops-directive-web-app-data"
-domain        = "hamza-salam.click"
-db_name       = "mydb"
-db_user       = "foo"
-# db_pass = "foobarbaz"
